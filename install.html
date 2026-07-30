@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Install Genny</title>
+<meta name="description" content="Genny puts Generation6's own published knowledge — the blog and the Academy curriculum — inside Claude, for Generation6 people.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/styles.css">
+<header><div class="wrap">
+  <a href="/"><img src="/logo.png" srcset="/logo.png 1x, /logo@2x.png 2x" alt="Genny"></a>
+  <nav><a href="/">What it is</a><a href="/install.html" aria-current="page">Install</a><a href="/inside.html">What's inside</a><a href="/faq.html">FAQ</a><a href="/contact.html">Contact</a></nav>
+</div></header>
+<main><div class="wrap">
+<h1>Adding Genny to Claude</h1>
+<p class="lede">Two minutes. You need a Claude account on a plan that supports custom
+connectors, and your Generation6 email address.</p>
+
+<ol class="steps">
+  <li><b>Open Claude's connector settings</b>
+      In the Claude app: Settings → Connectors → Add custom connector.</li>
+  <li><b>Paste the address</b>
+      <button class="url" type="button" data-copy="https://mcp.familybusiness.se/genny"><span class="addr">https://mcp.familybusiness.se/genny</span><span class="hint" aria-hidden="true">Copy</span></button>
+<span id="copy-status" role="status" aria-live="polite" class="sr"></span></li>
+  <li><b>Claude will ask you to sign in</b>
+      A Genny page opens asking for your email. Use your
+      <strong>@generation6.com</strong> address.</li>
+  <li><b>Enter the six-digit code</b>
+      It arrives by email within a few seconds. Check spam the first time.</li>
+  <li><b>You're connected</b>
+      Genny appears in Claude's connector list. It stays connected — you won't be asked
+      again unless access changes.</li>
+  <li><b>Try it</b>
+      Ask something you'd actually want to know:
+      <ul class="try">
+        <li>What does the Academy teach about triangulation?</li>
+        <li>What have we published on next-generation ownership education?</li>
+      </ul></li>
+</ol>
+
+<h2>If something goes wrong</h2>
+
+<details><summary>My address wasn't recognised</summary>
+<p>Genny only accepts @generation6.com addresses unless yours has been added individually.
+If you should have access with a different address, <a href="/contact.html">ask</a> — it
+takes a minute to add.</p></details>
+
+<details><summary>The code never arrived</summary>
+<p>Check spam first. If it's genuinely missing, try again — a new code invalidates the old
+one. Codes expire after a few minutes.</p></details>
+
+<details><summary>Claude says the connector is disconnected</summary>
+<p>Remove it and add it again. If it fails a second time, that's worth reporting rather
+than retrying — it usually means something on our side.</p></details>
+
+<details><summary>"Rate limit reached"</summary>
+<p>There's a ceiling of 40 questions an hour, which exists to stop runaway loops rather than
+to ration you. Normal use never reaches it. If you hit it in ordinary work, tell us — the
+limit is wrong, not you.</p></details>
+</div></main>
+<script src="/app.js" defer></script>
+<footer><div class="wrap">
+  Genny is a Generation6 tool. Access is limited to Generation6.
+  <a href="/contact.html">Something wrong?</a>
+</div></footer>
+</html>

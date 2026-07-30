@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What's inside Genny</title>
+<meta name="description" content="Genny puts Generation6's own published knowledge — the blog and the Academy curriculum — inside Claude, for Generation6 people.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/styles.css">
+<header><div class="wrap">
+  <a href="/"><img src="/logo.png" srcset="/logo.png 1x, /logo@2x.png 2x" alt="Genny"></a>
+  <nav><a href="/">What it is</a><a href="/install.html">Install</a><a href="/inside.html" aria-current="page">What's inside</a><a href="/faq.html">FAQ</a><a href="/contact.html">Contact</a></nav>
+</div></header>
+<main><div class="wrap">
+<h1>What's inside</h1>
+<p class="lede">Genny searches two bodies of Generation6 material. Both are complete as
+published — nothing is sampled or excerpted.</p>
+
+<div class="stats" id="stats">
+  <div class="stat"><b id="s-total">98</b><span>items</span></div>
+  <div class="stat"><b id="s-blog">59</b><span>blog posts</span></div>
+  <div class="stat"><b id="s-edu">39</b><span>Academy scripts</span></div>
+</div>
+<p id="asof" style="color:var(--soft);font-size:.86rem;margin-top:-.6rem">Counts read live
+from the index.</p>
+
+<h2>The blog</h2>
+<p>Every post published on generation6.com from 2021 to today, by the founders and the
+advisor network. Twenty-one of them first appeared as FamilyBusiness.org columns; Genny
+includes them and tells you where they were originally published, so you can cite the
+original.</p>
+
+<h2>The Academy</h2>
+<p>The full script of the taught curriculum — five tracks across twelve units. Genny can
+show you the curriculum as a structure, not just search it, which is useful when the
+question is about coverage rather than a topic.</p>
+<p>It also knows the <strong>145 concepts</strong> the Academy teaches and the attribution
+each script actually gives. Sixteen carry a named source; the rest don't. That distinction
+is recorded honestly: an unattributed concept means the script credited no one, not that the
+idea is ours.</p>
+
+<h2>What isn't in it</h2>
+<div class="card">
+  <p>Client work, engagement notes, workshop material, the director bank, and anything
+  unpublished. The wider family-business research literature is not here either — that's a
+  different tool.</p>
+</div>
+
+<h2>How new material arrives</h2>
+<p>New posts and scripts are added deliberately, not automatically. If you've published
+something recently and Genny doesn't know it, that's expected rather than broken —
+<a href="/contact.html">say so</a> and it gets added.</p>
+
+<script>
+fetch('/stats.json').then(r => r.ok ? r.json() : null).then(d => {
+  if (!d || !d.sources) return;
+  const by = Object.fromEntries(d.sources.map(s => [s.source_key, s.items]));
+  const set = (id, v) => { if (v != null) document.getElementById(id).textContent = v; };
+  set('s-blog', by.gen6); set('s-edu', by.gen6edu);
+  set('s-total', d.sources.reduce((a, s) => a + Number(s.items), 0));
+}).catch(() => {});
+</script>
+</div></main>
+<script src="/app.js" defer></script>
+<footer><div class="wrap">
+  Genny is a Generation6 tool. Access is limited to Generation6.
+  <a href="/contact.html">Something wrong?</a>
+</div></footer>
+</html>
